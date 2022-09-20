@@ -1,0 +1,225 @@
+
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <script>
+        /*
+        YASAL UYARI
+        Kaynak kodumuzun ve tüm sorularımızın telif hakları alınmıştır.
+        Kaynak gösterilse dahi içeriklerimizin kısmen veya tamamen kullanılması kesinlikle yasaktır.
+        Aksi takdirde avukatlarımız gerekli cezai işlemleri başlatacaktır.
+        */
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Seviyeler</title>
+    <meta name="referrer" content="no-referrer" />
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <style>
+        body {
+            -moz-user-select: -moz-none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+    <script>
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+        window.onload = function () {
+            document.addEventListener("contextmenu", function (e) {
+                e.preventDefault();
+            }, false);
+            document.addEventListener("keydown", function (e) {
+                // "I" key
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+                    disabledEvent(e);
+                }
+                // "J" key
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                    disabledEvent(e);
+                }
+                // "S" key + macOS
+                if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+                    disabledEvent(e);
+                }
+                // "U" key
+                if (e.ctrlKey && e.keyCode == 85) {
+                    disabledEvent(e);
+                }
+                // "F12" key
+                if (event.keyCode == 123) {
+                    disabledEvent(e);
+                }
+            }, false);
+            function disabledEvent(e) {
+                if (e.stopPropagation) {
+                    e.stopPropagation();
+                } else if (window.event) {
+                    window.event.cancelBubble = true;
+                }
+                e.preventDefault();
+                return false;
+            }
+        }
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
+    <script>
+        var c4ee2cb686 = function (d) { var r = M(V(Y(X(d), 8 * d.length))); return r.toLowerCase() }; function M(d) { for (var _, m = "0123456789ABCDEF", f = "", r = 0; r < d.length; r++)_ = d.charCodeAt(r), f += m.charAt(_ >>> 4 & 15) + m.charAt(15 & _); return f } function X(d) { for (var _ = Array(d.length >> 2), m = 0; m < _.length; m++)_[m] = 0; for (m = 0; m < 8 * d.length; m += 8)_[m >> 5] |= (255 & d.charCodeAt(m / 8)) << m % 32; return _ } function V(d) { for (var _ = "", m = 0; m < 32 * d.length; m += 8)_ += String.fromCharCode(d[m >> 5] >>> m % 32 & 255); return _ } function Y(d, _) { d[_ >> 5] |= 128 << _ % 32, d[14 + (_ + 64 >>> 9 << 4)] = _; for (var m = 1732584193, f = -271733879, r = -1732584194, i = 271733878, n = 0; n < d.length; n += 16) { var h = m, t = f, g = r, e = i; f = md5_ii(f = md5_ii(f = md5_ii(f = md5_ii(f = md5_hh(f = md5_hh(f = md5_hh(f = md5_hh(f = md5_gg(f = md5_gg(f = md5_gg(f = md5_gg(f = md5_ff(f = md5_ff(f = md5_ff(f = md5_ff(f, r = md5_ff(r, i = md5_ff(i, m = md5_ff(m, f, r, i, d[n + 0], 7, -680876936), f, r, d[n + 1], 12, -389564586), m, f, d[n + 2], 17, 606105819), i, m, d[n + 3], 22, -1044525330), r = md5_ff(r, i = md5_ff(i, m = md5_ff(m, f, r, i, d[n + 4], 7, -176418897), f, r, d[n + 5], 12, 1200080426), m, f, d[n + 6], 17, -1473231341), i, m, d[n + 7], 22, -45705983), r = md5_ff(r, i = md5_ff(i, m = md5_ff(m, f, r, i, d[n + 8], 7, 1770035416), f, r, d[n + 9], 12, -1958414417), m, f, d[n + 10], 17, -42063), i, m, d[n + 11], 22, -1990404162), r = md5_ff(r, i = md5_ff(i, m = md5_ff(m, f, r, i, d[n + 12], 7, 1804603682), f, r, d[n + 13], 12, -40341101), m, f, d[n + 14], 17, -1502002290), i, m, d[n + 15], 22, 1236535329), r = md5_gg(r, i = md5_gg(i, m = md5_gg(m, f, r, i, d[n + 1], 5, -165796510), f, r, d[n + 6], 9, -1069501632), m, f, d[n + 11], 14, 643717713), i, m, d[n + 0], 20, -373897302), r = md5_gg(r, i = md5_gg(i, m = md5_gg(m, f, r, i, d[n + 5], 5, -701558691), f, r, d[n + 10], 9, 38016083), m, f, d[n + 15], 14, -660478335), i, m, d[n + 4], 20, -405537848), r = md5_gg(r, i = md5_gg(i, m = md5_gg(m, f, r, i, d[n + 9], 5, 568446438), f, r, d[n + 14], 9, -1019803690), m, f, d[n + 3], 14, -187363961), i, m, d[n + 8], 20, 1163531501), r = md5_gg(r, i = md5_gg(i, m = md5_gg(m, f, r, i, d[n + 13], 5, -1444681467), f, r, d[n + 2], 9, -51403784), m, f, d[n + 7], 14, 1735328473), i, m, d[n + 12], 20, -1926607734), r = md5_hh(r, i = md5_hh(i, m = md5_hh(m, f, r, i, d[n + 5], 4, -378558), f, r, d[n + 8], 11, -2022574463), m, f, d[n + 11], 16, 1839030562), i, m, d[n + 14], 23, -35309556), r = md5_hh(r, i = md5_hh(i, m = md5_hh(m, f, r, i, d[n + 1], 4, -1530992060), f, r, d[n + 4], 11, 1272893353), m, f, d[n + 7], 16, -155497632), i, m, d[n + 10], 23, -1094730640), r = md5_hh(r, i = md5_hh(i, m = md5_hh(m, f, r, i, d[n + 13], 4, 681279174), f, r, d[n + 0], 11, -358537222), m, f, d[n + 3], 16, -722521979), i, m, d[n + 6], 23, 76029189), r = md5_hh(r, i = md5_hh(i, m = md5_hh(m, f, r, i, d[n + 9], 4, -640364487), f, r, d[n + 12], 11, -421815835), m, f, d[n + 15], 16, 530742520), i, m, d[n + 2], 23, -995338651), r = md5_ii(r, i = md5_ii(i, m = md5_ii(m, f, r, i, d[n + 0], 6, -198630844), f, r, d[n + 7], 10, 1126891415), m, f, d[n + 14], 15, -1416354905), i, m, d[n + 5], 21, -57434055), r = md5_ii(r, i = md5_ii(i, m = md5_ii(m, f, r, i, d[n + 12], 6, 1700485571), f, r, d[n + 3], 10, -1894986606), m, f, d[n + 10], 15, -1051523), i, m, d[n + 1], 21, -2054922799), r = md5_ii(r, i = md5_ii(i, m = md5_ii(m, f, r, i, d[n + 8], 6, 1873313359), f, r, d[n + 15], 10, -30611744), m, f, d[n + 6], 15, -1560198380), i, m, d[n + 13], 21, 1309151649), r = md5_ii(r, i = md5_ii(i, m = md5_ii(m, f, r, i, d[n + 4], 6, -145523070), f, r, d[n + 11], 10, -1120210379), m, f, d[n + 2], 15, 718787259), i, m, d[n + 9], 21, -343485551), m = safe_add(m, h), f = safe_add(f, t), r = safe_add(r, g), i = safe_add(i, e) } return Array(m, f, r, i) } function md5_cmn(d, _, m, f, r, i) { return safe_add(bit_rol(safe_add(safe_add(_, d), safe_add(f, i)), r), m) } function md5_ff(d, _, m, f, r, i, n) { return md5_cmn(_ & m | ~_ & f, d, _, r, i, n) } function md5_gg(d, _, m, f, r, i, n) { return md5_cmn(_ & f | m & ~f, d, _, r, i, n) } function md5_hh(d, _, m, f, r, i, n) { return md5_cmn(_ ^ m ^ f, d, _, r, i, n) } function md5_ii(d, _, m, f, r, i, n) { return md5_cmn(m ^ (_ | ~f), d, _, r, i, n) } function safe_add(d, _) { var m = (65535 & d) + (65535 & _); return (d >> 16) + (_ >> 16) + (m >> 16) << 16 | 65535 & m } function bit_rol(d, _) { return d << _ | d >>> 32 - _ }
+        function d49e795036(veri) {
+            return c4ee2cb686("fe65b4e379ab79bd0bd3c41afab91f9f85e717720cb8f7b527" + veri + "4ab5806cfff9f488b06a717e7ec96ed60ddf960ef1ad8a150a");
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        .arka-plan {
+            background: rgb(241, 101, 41);
+            background: -moz-linear-gradient(90deg, rgba(241, 101, 41, 1) 0%, rgba(228, 77, 38, 1) 9999%);
+            background: -webkit-linear-gradient(90deg, rgba(241, 101, 41, 1) 0%, rgba(228, 77, 38, 1) 9999%);
+            background: linear-gradient(90deg, rgba(241, 101, 41, 1) 0%, rgba(228, 77, 38, 1) 9999%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f16529", endColorstr="#e44d26", GradientType=1);
+        }
+    </style>
+</head>
+
+<body class="fs-3 arka-plan text-dark" oncopy="return false" oncut="return false" onpaste="return false"
+    oncontextmenu="return false;">
+    <div id="sayfa-yukleniyor" hidden>
+        <div class="arka-plan fixed-top" style="height: 100%;">
+            <div class="bg-light m-5 p-5 rounded text-center">
+                <p class="fw-bold mb-5">Hızlı Kurulum</p>
+                <div class="progress">
+                    <div id="kurulum-cubugu"
+                        class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar"
+                        aria-label="Hızlı kurulum ilerleme çubuğu" aria-valuenow="75" aria-valuemin="0"
+                        aria-valuemax="100" style="width: 0%"></div>
+                </div>
+                <span id="kurulum-yuzdesi">0%</span>
+                <hr class="mt-5 mb-5">
+                <p>
+                    Sıfırdan ileri seviyeye doğru hazırladığımız HTML sürüvenimizde herkese başarılar dileriz.
+                </p>
+                <p class="fw-bold">HAKKOD</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.write('<script src="/js/veritabani-kontrolu.js?x=' + new Date().getTime() + '"><\/script>')
+    </script>
+    <div id="icerik">
+        <div class="container-fluid mt-3 mb-3">
+            <div class="text-center text-white">
+                <h1 class="fw-bold">HTML TESTİ</h1>
+                <p>
+                    Bir önceki seviyeyi geçmeden bir sonraki bölümün kilidini açamazsınız.
+                </p>
+            </div>
+            <div>
+                <div onclick="window.location.href='/e676594bba3fce180390cde307c158b9.html?2a8eeb69198e92763b9e33c794320ad23d7ade79021da8952bfb9d555e5af4ed5255a8a3043f73cdca7172f847940d9aacb6ee4380d0da839269d29da354660ae7478fd043913647eb9ad1a692620128877cc37c3f9f0369bba985652e45b54fb6268c86710cdcf5a01d6c4c84b6738bc1312cf39dc6b4edcf2bc61b66ce36f33482dea579ffedde8b7597f97c3f5e39da9cd78b93722f5746f1946e5ab5dcd9fa201c22d88d114c7491674e13b560a854939f13cf3167752ab2de68dcc2160b6a504bf840ed572fa2529eaa96a36e79e1764f6eb1d19d8f80613aca35f8599c9339d175fc418b592c187e7fa416b0f6e62bf84cddc6b7899fcb=90549f247e8bcbcf7fdbc83bb8fae03b7a6b6a048de801aa098ee50e2895670f9f5137064e2dbb81f852a722ac9ba090984900321013804dc395f81c8cf7ffb1f5fb671f34434b038b42e790929b759d18a3d26c3cde11ae966550b667d07672c12bac8f3249fc891247a0b29b3f16b8c8636a5dcbf3004c47fd512e60103d4ca538a25b0027bd9caf5d18097ae8e838ec1d065e8852a94b56e45adfd7d2fe194e85b1d76f3055974b356587bf4e5d54ebfda2b9d1af71cd890788d3c448e1a74284020735688b9b76186f618e59acc8927f0945e7ed62e37d89643a4ff06f9eb40cb8677c3f1fd03c7872d4f1d3e96df17c0b066fc0d8020d38';"
+                    class="p-5 border bg-dark text-white rounded-3 text-center shadow-sm mt-4">
+                    <div class="row">
+                        <div class="col-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                class="bi bi-stack" viewBox="0 0 16 16">
+                                <path
+                                    d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.598.598 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.598.598 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.598.598 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535L7.733.063z" />
+                                <path
+                                    d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.598.598 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.659z" />
+                            </svg>
+                        </div>
+                        <div class="col-8">
+                            Kütüphaneye Git
+                        </div>
+                    </div>
+                </div>
+
+                <div id="seviyeler">
+                    <div class="p-5 border bg-white rounded-3 text-center shadow-sm mt-4">Yükleniyor...</div>
+                </div>
+            </div>
+            <footer class="text-center text-white mt-3">
+                <span class="fs-1 fw-bold">YASAL UYARI</span><br>
+                Kaynak kodumuzun ve tüm sorularımızın telif hakları alınmıştır.
+                Kaynak gösterilse dahi içeriklerimizin kısmen veya tamamen kullanılması kesinlikle yasaktır.
+                Aksi takdirde avukatlarımız gerekli cezai işlemleri başlatacaktır.
+            </footer>
+        </div>
+    </div>
+
+    <!-- Kilitli Seviye Uyarı Modeli -->
+    <button id="kilitli-seviye-uyarisi-modelini-acan-buton" hidden data-bs-toggle="modal"
+        data-bs-target="#kilitli-seviye-uyarisi-modeli"></button>
+    <div class="modal fade" id="kilitli-seviye-uyarisi-modeli" tabindex="-1"
+        aria-labelledby="kilitli-seviye-uyarisi-modeli-basligi" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-light">
+                <div class="modal-header">
+                    <p class="modal-title fw-bold" id="kilitli-seviye-uyarisi-modeli-basligi">Seviye Kilitli</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Bir önceki seviyeyi geçmeden bir sonraki bölümün kilidini açamazınız.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="arka-plan text-white btn fs-3 col-6"
+                        data-bs-dismiss="modal">Tamam</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function testiAc(seviye) {
+            if ((localStorage.getItem(d49e795036("Seviye" + (seviye - 1))) != null &&
+                JSON.parse(ba49b8134d((localStorage.getItem(d49e795036("Seviye" + (1)))), "5de566e83266f64c")) == true) || seviye == 1)
+                window.location.href = '/d0c33d17c93bcc206415f4e857caee58.html?seviye=' + seviye;
+            else document.getElementById("kilitli-seviye-uyarisi-modelini-acan-buton").click();
+        }
+
+
+        function ae74f565d0(ae74f565d0necekVeri, anahtar) {
+            ae74f565d0necekVeri = CryptoJS.enc.Utf8.parse(ae74f565d0necekVeri);
+            var sifreliVeri = CryptoJS.AES.encrypt(ae74f565d0necekVeri, CryptoJS.enc.Utf8.parse(anahtar), { mode: CryptoJS.mode.ECB, padding: CryptoJS.pad.ZeroPadding });
+            sifreliVeri = sifreliVeri.ciphertext.toString(CryptoJS.enc.Hex);
+            return sifreliVeri;
+        }
+
+
+        function ba49b8134d(ba49b8134dnecekVeri, anahtar) {
+            var ba49b8134dnmisVeri = CryptoJS.AES.decrypt({ ciphertext: CryptoJS.enc.Hex.parse(ba49b8134dnecekVeri) }, CryptoJS.enc.Utf8.parse(anahtar), { mode: CryptoJS.mode.ECB, padding: CryptoJS.pad.ZeroPadding });
+            ba49b8134dnmisVeri = ba49b8134dnmisVeri.toString(CryptoJS.enc.Utf8);
+            return ba49b8134dnmisVeri;
+        }
+
+
+        function seviyeleriGetir() {
+            var seviyelerHTML = "";
+            for (var f1 = 1; f1 <= ba49b8134d(localStorage.getItem(d49e795036("Seviye Sayısı")), "8c99c0fbcfcc043b"); f1++) {
+                if (f1 == 1) {
+                    seviyelerHTML += '<div onclick="testiAc(' + f1 + ')" class="p-5 border bg-light rounded-3 text-center shadow-sm mt-4"><div class="row"><div class="col-2"></div><div class="col-8">Seviye ' + f1 + '</div></div></div>'
+                    continue;
+                }
+                if (localStorage.getItem(d49e795036("Seviye" + (f1 - 1))) != null &&
+                    JSON.parse(ba49b8134d(localStorage.getItem(d49e795036("Seviye" + (f1 - 1))), "5de566e83266f64c")) == true) {
+                    seviyelerHTML += '<div onclick="testiAc(' + f1 + ')" class="p-5 border bg-light rounded-3 text-center shadow-sm mt-4"><div class="row"><div class="col-2"></div><div class="col-8">Seviye ' + f1 + '</div></div></div>'
+                } else {
+                    seviyelerHTML += '<div onclick="testiAc(' + f1 + ')" class="p-5 border bg-light rounded-3 text-center shadow-sm mt-4"><div class="row"><div class="col-2"><img src="/gorseller/svg/kilit.svg"></div><div class="col-8">Seviye ' + f1 + '</div></div></div>'
+                }
+            }
+            document.getElementById("seviyeler").innerHTML = seviyelerHTML;
+        }
+        seviyeleriGetir();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
