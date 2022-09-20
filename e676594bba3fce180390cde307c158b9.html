@@ -194,8 +194,8 @@
         function etiketleriOlustur() {
             var etiketlerHTML = "";
             for (var f1 = 0; f1 < tumEtiketler.length; f1++) {
-                var etiket = xssKorumasi(tumEtiketler[f1][0]);
-                var aciklama = xssKorumasi(tumEtiketler[f1][2]);
+                var etiket = xssKorumasi(tumEtiketler[f1][0].replace("'","\\'"));
+                var aciklama = xssKorumasi(tumEtiketler[f1][2].replace("'","\\'"));
                 etiketlerHTML += '<div onclick="bilgilendirmeModeliniAc(\'' + etiket + '\',\'' + aciklama + '\')" class="p-5 border bg-white rounded-3 text-center shadow-sm mt-4">' + etiket + '</div>';
             }
             document.getElementById("etiketler").innerHTML = etiketlerHTML;
