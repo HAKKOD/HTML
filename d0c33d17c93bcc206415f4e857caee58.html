@@ -110,7 +110,6 @@
             window.location.href = '/f1c54757f9d8fba29f2b7b7a6a3e52f9.html?bb1c28b94620e66f66dfc6954844d03f9f740ff460c4ab60528766d12ac62f19ace1ced357573d6318c8b30661a0306b1cd8ab5957ea1d8051d0a117d26b3d3948c04fc4a83abc56951c64a2db3874660343d19150d65a316e1f0bd2c0b6a6af6e6d0131d60125654543d0e23d5408201238a0a22b4bd60c3a68d017478f9e668284ef651729c5b9b48da0ce5e1b49240e43e129041f34e29b95e22e4a126f1264574c24798ce92ac5e8f4e967ca8bdaa6422007ac5dcdd247314e8865ef173e3802f60c52ddae4e7e69a678cc08091dd1ec3a4796c132ae4b776473b7458064e6e3de2acc970b19bcd518334540532d54a9509926d47c690082=142bd9ee6614c100c9ee52e9ef76c7b9b850585933e3a6da1ec7d5606cbbcce1ccbc6cb356a22a7f01de5b0cb5ad847441531ca74ba95d1b1b0ff90309a75d037b5fac00b9f6f567d85043171858c388b39e2f0166de879f501c7cf2fe921120ace3b2c5c4f40a680c0d9f8a3f77ff1503483bf40d8ea39c7038d4d3c2da923b7dfcd30bfbdbd9262e561e71cc3168c396b915b7952d8587cc77b9eb91db1146e5226c2d1786d5bfb2e3ef4241feda732ee6a97b30f5783048cca667632a2543986615f547dafd03edbbc4f97ab30f2fd20b011971ded3d2533510facfb351ded17365d3cbf1b291bac6dd8b6441c50a08f7de1be007d14b5684';
         }
 
-
         // document.write('<script src="/js/veritabani-kontrolu.js?x=' + new Date().getTime() + '"><\/script>')
     </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -271,6 +270,63 @@
 
         soruNo = 0;
         var sorular = JSON.parse(ba49b8134d(ba49b8134d(localStorage.getItem(d49e795036("Seviye" + seviye + "Sorular")), "5de566e83266f64c"), "8c99c0fbcfcc043b"))
+        let soruDuzeni = '';
+        if (localStorage.getItem(`${seviye}. Seviye Soru Düzeni`) == null) {
+            soruDuzeni = [];
+            for (let sorulanSoruID = 0; sorulanSoruID < 5; sorulanSoruID++) {
+                var aSikkiID = 0;
+                var bSikkiID = 0;
+                var cSikkiID = 0;
+                var sorulanSoru = sorular[sorulanSoruID][1];
+                var sorununCevabi = sorular[sorulanSoruID][2];
+                while (true) {
+                    aSikkiID = parseInt(Math.random() * 10000) % sorular.length;
+                    bSikkiID = parseInt(Math.random() * 10000) % sorular.length;
+                    cSikkiID = parseInt(Math.random() * 10000) % sorular.length;
+                    if (aSikkiID != bSikkiID && aSikkiID != cSikkiID && bSikkiID != cSikkiID &&
+                        aSikkiID != sorulanSoruID && bSikkiID != sorulanSoruID && cSikkiID != sorulanSoruID) {
+                        break;
+                    }
+                }
+                aSikki = sorular[aSikkiID][2];
+                bSikki = sorular[bSikkiID][2];
+                cSikki = sorular[cSikkiID][2];
+                aSikkiCevap = sorular[aSikkiID][0];
+                bSikkiCevap = sorular[bSikkiID][0];
+                cSikkiCevap = sorular[cSikkiID][0];
+                var rastgeleSik = parseInt(Math.random() * 10 % 3 + 1);
+                if (rastgeleSik == 1) {
+                    dogruCevabinOlduguSik = "A";
+                    aSikki = sorununCevabi;
+                } else if (rastgeleSik == 2) {
+                    dogruCevabinOlduguSik = "B";
+                    bSikki = sorununCevabi;
+                } else if (rastgeleSik == 3) {
+                    dogruCevabinOlduguSik = "C";
+                    cSikki = sorununCevabi;
+                }
+                soruDuzeni.push(
+                    {
+                        sorulanSoru: sorulanSoru,
+                        aSikki: aSikki,
+                        bSikki: bSikki,
+                        cSikki: cSikki,
+                        aSikkiCevap,
+                        bSikkiCevap,
+                        cSikkiCevap,
+                        dogruCevabinOlduguSik: dogruCevabinOlduguSik,
+                        aYanlisOlarakIsaretlendimi: 0,
+                        bYanlisOlarakIsaretlendimi: 0,
+                        cYanlisOlarakIsaretlendimi: 0,
+                        soruCozuldumu: 0
+                    }
+                );
+            }
+            localStorage.setItem(`${seviye}. Seviye Soru Düzeni`, JSON.stringify(soruDuzeni));
+        } else {
+            soruDuzeni = JSON.parse(localStorage.getItem(`${seviye}. Seviye Soru Düzeni`));
+        }
+        console.log(soruDuzeni)
         var dogruCevabinOlduguSik = "";
         var dogruSayisi = 0;
         var yanlisSayisi = 0;
@@ -293,43 +349,26 @@
                 // window.location.href = "/";
                 return;
             }
-            var aSikkiID = 0;
-            var bSikkiID = 0;
-            var cSikkiID = 0;
-            var sorulanSoru = sorular[sorulanSoruID][1];
-            var sorununCevabi = sorular[sorulanSoruID][2];
-            while (true) {
-                aSikkiID = parseInt(Math.random() * 10000) % sorular.length;
-                bSikkiID = parseInt(Math.random() * 10000) % sorular.length;
-                cSikkiID = parseInt(Math.random() * 10000) % sorular.length;
-                if (aSikkiID != bSikkiID && aSikkiID != cSikkiID && bSikkiID != cSikkiID &&
-                    aSikkiID != sorulanSoruID && bSikkiID != sorulanSoruID && cSikkiID != sorulanSoruID) {
+
+            document.getElementById("soru").innerText = (soruNo + 1) + ". Soru\n" + soruDuzeni[sorulanSoruID].sorulanSoru;
+            document.getElementById("aSikki").innerText = soruDuzeni[sorulanSoruID].aSikki;
+            document.getElementById("bSikki").innerText = soruDuzeni[sorulanSoruID].bSikki;
+            document.getElementById("cSikki").innerText = soruDuzeni[sorulanSoruID].cSikki;
+            if (soruDuzeni[sorulanSoruID].aYanlisOlarakIsaretlendimi == 1) sikkiKirmiziYap('aSikki',false);
+            if (soruDuzeni[sorulanSoruID].bYanlisOlarakIsaretlendimi == 1) sikkiKirmiziYap('bSikki',false);
+            if (soruDuzeni[sorulanSoruID].cYanlisOlarakIsaretlendimi == 1) sikkiKirmiziYap('cSikki',false);
+        }
+        if (localStorage.getItem(`${seviye}. Seviye Soru Düzeni`) == null) {
+            soruYukle(0);
+        } else {
+            for (let x1 = 0; x1 < soruDuzeni.length; x1++) {
+                if (soruDuzeni[x1].soruCozuldumu == 0) {
+                    soruNo = x1;
+                    soruYukle(x1);
                     break;
                 }
             }
-            aSikki = sorular[aSikkiID][2];
-            bSikki = sorular[bSikkiID][2];
-            cSikki = sorular[cSikkiID][2];
-            aSikkiCevap = sorular[aSikkiID][0];
-            bSikkiCevap = sorular[bSikkiID][0];
-            cSikkiCevap = sorular[cSikkiID][0];
-            var rastgeleSik = parseInt(Math.random() * 10 % 3 + 1);
-            if (rastgeleSik == 1) {
-                dogruCevabinOlduguSik = "A";
-                aSikki = sorununCevabi;
-            } else if (rastgeleSik == 2) {
-                dogruCevabinOlduguSik = "B";
-                bSikki = sorununCevabi;
-            } else if (rastgeleSik == 3) {
-                dogruCevabinOlduguSik = "C";
-                cSikki = sorununCevabi;
-            }
-            document.getElementById("soru").innerText = (soruNo + 1) + ". Soru\n" + sorulanSoru;
-            document.getElementById("aSikki").innerText = aSikki;
-            document.getElementById("bSikki").innerText = bSikki;
-            document.getElementById("cSikki").innerText = cSikki;
         }
-        soruYukle(0);
 
 
         function sikkiYesilYap(id) {
@@ -342,8 +381,8 @@
         }
 
 
-        function sikkiKirmiziYap(id) {
-            if (JSON.parse(ba49b8134d(localStorage.getItem(d49e795036("Ses Açıkmı")), "5de566e83266f64c")) == true) {
+        function sikkiKirmiziYap(id, sesOynatilsinmi=true) {
+            if (sesOynatilsinmi && JSON.parse(ba49b8134d(localStorage.getItem(d49e795036("Ses Açıkmı")), "5de566e83266f64c")) == true) {
                 sesCal("/ses/yanlis.mp3");
             }
             document.getElementById(id).classList.add("fw-bold");
@@ -366,23 +405,27 @@
                 return;
             }
             var beklemeSuresi = 0;
-            if (dogruCevabinOlduguSik == isaretlenenSik) {
+            if (soruDuzeni[soruNo].dogruCevabinOlduguSik == isaretlenenSik) {
                 dogruSayisi++;
-                sikkiYesilYap(dogruCevabinOlduguSik.toLowerCase() + "Sikki");
+                sikkiYesilYap(soruDuzeni[soruNo].dogruCevabinOlduguSik.toLowerCase() + "Sikki");
                 beklemeSuresi = 1000;
                 setTimeout(() => {
                     sikkiNormaleCevir("aSikki");
                     sikkiNormaleCevir("bSikki");
                     sikkiNormaleCevir("cSikki");
+                    soruDuzeni[soruNo].soruCozuldumu = 1;
+                    localStorage.setItem(`${seviye}. Seviye Soru Düzeni`,JSON.stringify(soruDuzeni))
                     soruNo++;
                     soruYukle(soruNo);
                 }, beklemeSuresi);
             } else {
                 yanlisSayisi++;
-                document.getElementById("bilgildirme-modeli-basligi").innerText = window[isaretlenenSik.toLowerCase() + 'SikkiCevap'];
-                document.getElementById("bilgildirme-modeli-icerigi").innerText = window[isaretlenenSik.toLowerCase() + 'Sikki'];
+                soruDuzeni[soruNo][`${isaretlenenSik.toLowerCase()}YanlisOlarakIsaretlendimi`] = 1;
+                document.getElementById("bilgildirme-modeli-basligi").innerText = soruDuzeni[soruNo][isaretlenenSik.toLowerCase() + 'SikkiCevap'];
+                document.getElementById("bilgildirme-modeli-icerigi").innerText = soruDuzeni[soruNo][isaretlenenSik.toLowerCase() + 'Sikki'];
                 document.getElementById("bilgildirme-modelini-acan-buton").click();
                 sikkiKirmiziYap(isaretlenenSik.toLowerCase() + "Sikki");
+                localStorage.setItem(`${seviye}. Seviye Soru Düzeni`, JSON.stringify(soruDuzeni));
                 return;
             }
             if (soruNo == 4) {
